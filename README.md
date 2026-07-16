@@ -17,17 +17,3 @@ Welcome to **The Multiverse of Chatbots**! This is an interactive web applicatio
 * **Environment Management:** `python-dotenv`
 * **Styling:** Custom CSS via Streamlit Markdown
 
-## 🚀 Getting Started
-
-Follow these instructions to get a copy of the project up and running on your local machine.
-
-### Prerequisites
-
-You will need Python installed on your machine and an active API key from Google AI Studio.
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/asmitanand05/multiverse-of-chatbots.git](https://github.com/asmitanand05/multiverse-of-chatbots.git)
-   cd multiverse-of-chatbots
