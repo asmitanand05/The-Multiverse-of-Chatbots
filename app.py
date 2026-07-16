@@ -3,9 +3,7 @@ from google import genai
 import os 
 from dotenv import load_dotenv
 
-# ==========================================
-# 1. PAGE CONFIGURATION (Must be first!)
-# ==========================================
+# PAGE CONFIGURATION (Must be first!)
 st.set_page_config(
     page_title="Multiverse Chat",
     page_icon="🌌",
@@ -13,9 +11,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ==========================================
-# 2. CUSTOM CSS FUNCTION (Theming)
-# ==========================================
+# CUSTOM CSS FUNCTION (Theming)
 def add_custom_css(theme):
     if theme == "Dark":
         st.markdown(
@@ -44,24 +40,20 @@ def add_custom_css(theme):
             unsafe_allow_html=True
         )
 
-# ==========================================
-# 3. API SETUP
-# ==========================================
+# API SETUP
 load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-# ==========================================
-# 4. SIDEBAR SETTINGS & THEME TOGGLE
-# ==========================================
+# SIDEBAR SETTINGS & THEME TOGGLE
 st.sidebar.title("App Settings")
 
 personalities = [
     "An expert Hacker",
     "An angry Ravi Shastri",
-    "A crazy Ronaldo fan",
-    "Donald Trump",
+    "A crazy Messi fan",
+    "A calm and wise philosopher",
     "A panicked college student at 3 AM",
-    "A 1920s Mafia Boss",
+    "A Mexican Cartel Boss",
     "A highly sarcastic fitness coach"
 ]
 
@@ -77,9 +69,7 @@ selected_theme = st.sidebar.segmented_control("Choose a theme", options=["Light"
 # Apply the selected theme immediately
 add_custom_css(selected_theme)
 
-# ==========================================
 # 5. DYNAMIC AVATARS
-# ==========================================
 if personality == "An expert Hacker":
     bot_avatar = "💻"
 elif personality == "An angry Ravi Shastri":
@@ -97,9 +87,7 @@ elif personality == "A highly sarcastic fitness coach":
 else:
     bot_avatar = "🤖"
 
-# ==========================================
 # 6. MAIN APP LAYOUT & CHAT
-# ==========================================
 st.markdown("<h1>THE MULTIVERSE OF CHATBOTS</h1>", unsafe_allow_html=True)
 st.divider()
 
@@ -143,3 +131,4 @@ if st.button("SEND"):
     
     else:
         st.warning("Please type a message first")
+        
